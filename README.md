@@ -1,4 +1,4 @@
-🛡️ Insurance Premium Prediction App
+**Insurance Premium Prediction App**
 
 This project demonstrates a full-stack machine learning application for predicting insurance premium categories.
 
@@ -8,12 +8,12 @@ FastAPI → Backend REST API serving a trained ML model
 
 Streamlit → User-friendly frontend UI
 
-scikit-learn → Machine learning model training
+scikit-learn → Model training
 
 pandas / numpy → Data preprocessing
 
 Pickle → Model saving and loading
-
+```
 📂 Project Structure
 ├── app.py                 # FastAPI app (API + ML model prediction endpoint)
 ├── main.py                # Alternative FastAPI entrypoint (uvicorn startup)
@@ -22,10 +22,11 @@ Pickle → Model saving and loading
 ├── insurance.csv          # Dataset used for training
 ├── model.pkl              # Trained model (saved with pickle)
 └── README.md              # Documentation
+```
 
 ⚙️ Setup Instructions
 1. Clone the Repository
-   ```
+```
 git clone https://github.com/tsharma017/Insurance_Premium_Prediction_App.git
 cd Insurance_Premium_Prediction_App
 ```
@@ -35,7 +36,6 @@ python3 -m venv myenv
 
 
 Activate the environment:
-
 macOS / Linux
 
 source myenv/bin/activate
@@ -70,9 +70,9 @@ streamlit run frontend.py --server.port 8501
 ✅ Open frontend at: http://127.0.0.1:8501
 
 📊 Workflow
-🔹 Model Training
+Model Training
 
-Open and run Fastapi_ml_model.ipynb
+Run Fastapi_ml_model.ipynb
 
 Loads insurance.csv dataset
 
@@ -96,7 +96,7 @@ Trains a classification model
 
 Saves trained model as model.pkl
 
-🔹 Backend (FastAPI)
+Backend (FastAPI)
 
 Loads model.pkl
 
@@ -106,13 +106,13 @@ Uses Pydantic for input validation
 
 Returns JSON with prediction
 
-🔹 Frontend (Streamlit)
+Frontend (Streamlit)
 
-Collects user input through form
+Collects user input through a form
 
 Sends request to backend API
 
-Displays predicted premium category
+Displays predicted insurance premium category
 
 📦 Example API Request
 
