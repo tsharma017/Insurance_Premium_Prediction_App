@@ -32,71 +32,75 @@ cd Insurance_Premium_Prediction_App
 ```
 
 3. Create a Virtual Environment
+```
 python3 -m venv myenv
-
+```
 
 Activate the environment:
 macOS / Linux
-
+```
 source myenv/bin/activate
-
+```
 
 Windows PowerShell
-
+```
 myenv\Scripts\activate
+```
 
 3. Install Dependencies
+```
 pip install -r requirements.txt
-
+```
 
 👉 If you don’t have a requirements.txt, generate one:
-
+```
 pip freeze > requirements.txt
-
+```
 🚀 Running the App
 1. Start the FastAPI Backend
+```
 uvicorn app:app --host 127.0.0.1 --port 8000 --reload
-
+```
 
 ✅ Open API docs at: http://127.0.0.1:8000/docs
 
 2. Start the Streamlit Frontend
 
 In another terminal:
-
+```
 streamlit run frontend.py --server.port 8501
-
+```
 
 ✅ Open frontend at: http://127.0.0.1:8501
 
 📊 Workflow
 Model Training
 
-Run Fastapi_ml_model.ipynb
+Run *Fastapi_ml_model.ipynb*
 
 Loads insurance.csv dataset
 
 Preprocesses features:
 
-age
+- age
 
-weight
+- weight
 
-height
+- height
 
-income
+- income
 
-smoker
+- smoker
 
-city
+- city
 
-occupation
+- occupation
 
 Trains a classification model
 
 Saves trained model as model.pkl
 
-Backend (FastAPI)
+**Backend (FastAPI)**
 
 Loads model.pkl
 
@@ -106,7 +110,7 @@ Uses Pydantic for input validation
 
 Returns JSON with prediction
 
-Frontend (Streamlit)
+**Frontend (Streamlit)**
 
 Collects user input through a form
 
@@ -117,6 +121,7 @@ Displays predicted insurance premium category
 📦 Example API Request
 
 Request:
+```
 
 curl -X POST "http://127.0.0.1:8000/predict" \
 -H "Content-Type: application/json" \
@@ -130,12 +135,14 @@ curl -X POST "http://127.0.0.1:8000/predict" \
   "occupation": "retired"
 }'
 
+```
 
 Response:
-
+```
 {
   "predicted_category": "medium"
 }
+```
 
 🛠️ Tech Stack
 
