@@ -1,6 +1,8 @@
 🛡️ Insurance Premium Prediction App
 
-This project demonstrates a full-stack machine learning application for predicting insurance premium categories. It combines:
+This project demonstrates a full-stack machine learning application for predicting insurance premium categories.
+
+It combines:
 
 FastAPI → Backend REST API serving a trained ML model
 
@@ -22,49 +24,73 @@ Pickle → Model saving and loading
 └── README.md              # Documentation
 
 ⚙️ Setup Instructions
-1. Clone the repository
+1. Clone the Repository
+   ```
 git clone https://github.com/tsharma017/Insurance_Premium_Prediction_App.git
 cd Insurance_Premium_Prediction_App
+```
 
-2. Create a virtual environment
+3. Create a Virtual Environment
 python3 -m venv myenv
-source myenv/bin/activate   # macOS/Linux
-myenv\Scripts\activate      # Windows PowerShell
 
-3. Install dependencies
+
+Activate the environment:
+
+macOS / Linux
+
+source myenv/bin/activate
+
+
+Windows PowerShell
+
+myenv\Scripts\activate
+
+3. Install Dependencies
 pip install -r requirements.txt
 
 
-If you don’t have a requirements.txt, generate one:
+👉 If you don’t have a requirements.txt, generate one:
 
 pip freeze > requirements.txt
 
 🚀 Running the App
-1. Start the FastAPI backend
+1. Start the FastAPI Backend
 uvicorn app:app --host 127.0.0.1 --port 8000 --reload
 
 
-Now visit: http://127.0.0.1:8000/docs
-(You can test the API interactively here!)
+✅ Open API docs at: http://127.0.0.1:8000/docs
 
-2. Start the Streamlit frontend
+2. Start the Streamlit Frontend
 
-Open a new terminal and run:
+In another terminal:
 
 streamlit run frontend.py --server.port 8501
 
 
-Now visit: http://127.0.0.1:8501
+✅ Open frontend at: http://127.0.0.1:8501
 
 📊 Workflow
 🔹 Model Training
 
-Run Fastapi_ml_model.ipynb
+Open and run Fastapi_ml_model.ipynb
 
-Loads insurance.csv
+Loads insurance.csv dataset
 
 Preprocesses features:
-(age, weight, height, income, smoker, city, occupation)
+
+age
+
+weight
+
+height
+
+income
+
+smoker
+
+city
+
+occupation
 
 Trains a classification model
 
@@ -76,20 +102,22 @@ Loads model.pkl
 
 Defines /predict endpoint
 
-Validates user input with Pydantic
+Uses Pydantic for input validation
 
-Returns JSON prediction
+Returns JSON with prediction
 
 🔹 Frontend (Streamlit)
 
-Collects user input (form)
+Collects user input through form
 
-Sends request to FastAPI backend
+Sends request to backend API
 
 Displays predicted premium category
 
 📦 Example API Request
-Request
+
+Request:
+
 curl -X POST "http://127.0.0.1:8000/predict" \
 -H "Content-Type: application/json" \
 -d '{
@@ -102,7 +130,9 @@ curl -X POST "http://127.0.0.1:8000/predict" \
   "occupation": "retired"
 }'
 
-Response
+
+Response:
+
 {
   "predicted_category": "medium"
 }
@@ -125,13 +155,8 @@ numpy
 
 Add probability scores with predictions
 
-Deploy app to AWS / Heroku / Render using Docker
+Deploy to AWS / Heroku / Render with Docker
 
-Add CI/CD pipeline for automatic model retraining
+Add CI/CD pipeline for model retraining
 
-Extend dataset with more features (health conditions, lifestyle habits, etc.)
-
-👨‍💻 Author
-
-Tejendra Sharma
-📌 GitHub Profile
+Expand dataset with more health & lifestyle features
