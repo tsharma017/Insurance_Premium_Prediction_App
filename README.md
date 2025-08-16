@@ -1,75 +1,76 @@
-**Insurance Premium Prediction App**
+🛡️ Insurance Premium Prediction App
 
-This project demonstrates a full-stack machine learning application built with:
+This project demonstrates a full-stack machine learning application for predicting insurance premium categories. It combines:
 
-FastAPI → backend REST API serving a trained ML model
+FastAPI → Backend REST API serving a trained ML model
 
-Streamlit → simple frontend UI for users to interact with the model
+Streamlit → User-friendly frontend UI
 
-scikit-learn → training the machine learning model
+scikit-learn → Machine learning model training
 
-pandas / numpy → preprocessing the dataset
+pandas / numpy → Data preprocessing
 
-Pickle → saving and loading the trained model
+Pickle → Model saving and loading
 
 📂 Project Structure
-├── app.py                # FastAPI app with ML model loading & prediction endpoint
-├── main.py               # Alternative FastAPI entrypoint (uvicorn startup)
-├── frontend.py           # Streamlit app for user-friendly frontend
-├── Fastapi_ml_model.ipynb # Jupyter notebook: model training and export
-├── insurance.csv         # Dataset used for training (Insurance Premium data)
-├── model.pkl             # Saved trained model (scikit-learn pipeline)
-└── README.md             # Documentation
+├── app.py                 # FastAPI app (API + ML model prediction endpoint)
+├── main.py                # Alternative FastAPI entrypoint (uvicorn startup)
+├── frontend.py            # Streamlit frontend (user interface)
+├── Fastapi_ml_model.ipynb # Jupyter notebook (model training & export)
+├── insurance.csv          # Dataset used for training
+├── model.pkl              # Trained model (saved with pickle)
+└── README.md              # Documentation
 
-**Setup Instructions**
-#1. Clone the repo
-git clone https://github.com/your-username/insurance-premium-predictor.git
-cd insurance-premium-predictor
+⚙️ Setup Instructions
+1. Clone the repository
+git clone https://github.com/tsharma017/Insurance_Premium_Prediction_App.git
+cd Insurance_Premium_Prediction_App
 
-#2. Create a virtual environment
+2. Create a virtual environment
 python3 -m venv myenv
 source myenv/bin/activate   # macOS/Linux
 myenv\Scripts\activate      # Windows PowerShell
 
-#3. Install dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
 
-If you don’t have a requirements.txt yet, you can generate one:
+If you don’t have a requirements.txt, generate one:
 
 pip freeze > requirements.txt
 
-#🚀 Running the App
+🚀 Running the App
 1. Start the FastAPI backend
 uvicorn app:app --host 127.0.0.1 --port 8000 --reload
 
 
-Verify the API is running at: http://127.0.0.1:8000/docs
+Now visit: http://127.0.0.1:8000/docs
+(You can test the API interactively here!)
 
 2. Start the Streamlit frontend
 
-In another terminal:
+Open a new terminal and run:
 
 streamlit run frontend.py --server.port 8501
 
 
-Now open: http://127.0.0.1:8501
+Now visit: http://127.0.0.1:8501
 
-**📊 Workflow**
-
-Model Training
+📊 Workflow
+🔹 Model Training
 
 Run Fastapi_ml_model.ipynb
 
 Loads insurance.csv
 
-Preprocesses features (age, weight, height, income, smoker, city, occupation)
+Preprocesses features:
+(age, weight, height, income, smoker, city, occupation)
 
 Trains a classification model
 
-Saves it as model.pkl
+Saves trained model as model.pkl
 
-Backend (FastAPI)
+🔹 Backend (FastAPI)
 
 Loads model.pkl
 
@@ -77,17 +78,18 @@ Defines /predict endpoint
 
 Validates user input with Pydantic
 
-Returns JSON with prediction
+Returns JSON prediction
 
-Frontend (Streamlit)
+🔹 Frontend (Streamlit)
 
-Collects user input (age, weight, height, income, smoker, city, occupation)
+Collects user input (form)
 
 Sends request to FastAPI backend
 
-Displays predicted insurance premium category
+Displays predicted premium category
 
 📦 Example API Request
+Request
 curl -X POST "http://127.0.0.1:8000/predict" \
 -H "Content-Type: application/json" \
 -d '{
@@ -100,14 +102,12 @@ curl -X POST "http://127.0.0.1:8000/predict" \
   "occupation": "retired"
 }'
 
-
-Response:
-
+Response
 {
   "predicted_category": "medium"
 }
 
-**🛠️ Tech Stack**
+🛠️ Tech Stack
 
 Python 3.12
 
@@ -121,16 +121,17 @@ pandas
 
 numpy
 
-**🔮 Future Improvements**
+🔮 Future Improvements
 
 Add probability scores with predictions
 
-Deploy to AWS / Heroku / Render with Docker
+Deploy app to AWS / Heroku / Render using Docker
 
-Add CI/CD pipeline for model retraining
+Add CI/CD pipeline for automatic model retraining
 
-Secure the API with authentication
+Extend dataset with more features (health conditions, lifestyle habits, etc.)
 
 👨‍💻 Author
 
 Tejendra Sharma
+📌 GitHub Profile
